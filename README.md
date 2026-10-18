@@ -23,7 +23,7 @@ La plataforma es multi-junta: varias juntas de vecinos la usan al mismo tiempo y
 - **Librerías incluidas:** FPDF 1.9 (certificados en PDF) y PHPMailer (correos por SMTP de Gmail con TLS). Vienen dentro del proyecto, no hay que instalarlas.
 - **Entorno local:** XAMPP (Apache + PHP + MariaDB).
 - **Control de versiones:** Git / GitHub.
-- **Cloud:** no se usa. El sistema funciona en un servidor local y la publicación en un hosting queda como mejora futura.
+
 
 ## Instrucciones para ejecutar el proyecto localmente
 1. Instalar XAMPP y abrir su Panel de Control.
