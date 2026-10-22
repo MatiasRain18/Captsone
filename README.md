@@ -32,6 +32,16 @@ La plataforma es multi-junta: varias juntas de vecinos la usan al mismo tiempo y
 4. Entrar a `http://localhost/phpmyadmin/`, crear la base de datos `unidad_territorial` (cotejamiento `utf8mb4_unicode_ci`) e importar el archivo `unidad_territorial.sql`, que está en la misma carpeta `Proyecto De Titulo`.
 5. Abrir en el navegador `http://localhost/JuntaVecinos/HTML/Index.html`.
 
+## Cómo ingresar al sistema (cuentas de prueba)
+
+Para que quien revise el proyecto no se quede pegado en el registro y la aprobación, dejamos creadas dos juntas de ejemplo dentro del archivo unidad_territorial.sql. Basta con importarlo en el paso 4 y las cuentas ya quedan listas para usar desde la pantalla de acceso (http://localhost/JuntaVecinos/HTML/Index.html). El RUT se puede escribir con puntos y guion, tal como aparece abajo, porque el sistema lo formatea solo.
+
+La primera es la Junta de Vecinos Los Aromos. Su administrador, del directorio, es Benjamin, que entra con el RUT 21.691.775-8 y la contraseña HolaQueHace19. Su vecino de ejemplo es Matias, que entra con el RUT 21.691.775-K y la misma contraseña, HolaQueHace19.
+
+La segunda es la Junta de Vecinos Vista Hermosa. Su administrador es Luis, con el RUT 22.222.222-K y la contraseña 12345678. Su vecino de ejemplo es Hernan Crespo, con el RUT 12.121.212-K y la contraseña MatiasRain21.
+
+Con la cuenta de administrador se ve el panel del directorio, donde se aprueban inscripciones, certificados y postulaciones, se publican noticias y se administran los espacios. Con la cuenta de vecino se ve el panel del vecino, donde se piden certificados, se reserva, se postula y se leen los avisos. Si se entra primero con un administrador y después con el vecino de la otra junta, se puede comprobar que cada junta solo ve y modifica sus propios datos, que es justamente el soporte multi-junta del sistema.
+
 **Envío de correos (opcional):** en `PHP/Config-correo.php` se escribe una cuenta de Gmail y su contraseña de aplicación. Si no se configura, el sistema funciona igual y solo avisa que el correo no se pudo enviar.
 
 **Ver el sistema desde un celular:** el celular y el computador deben estar en la misma red WiFi (o el computador conectado al hotspot del celular). En el computador se ejecuta `ipconfig`, se copia la "Dirección IPv4" del adaptador Wi-Fi y en el celular se abre `http://ESA-IP/JuntaVecinos/HTML/Index.html`. Si no carga, hay que permitir Apache en el firewall de Windows.
