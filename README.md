@@ -32,7 +32,7 @@ La plataforma es multi-junta: varias juntas de vecinos la usan al mismo tiempo y
 4. Entrar a `http://localhost/phpmyadmin/`, crear la base de datos `unidad_territorial` (cotejamiento `utf8mb4_unicode_ci`) e importar el archivo `unidad_territorial.sql`, que está en la misma carpeta `Proyecto De Titulo`.
 5. Abrir en el navegador `http://localhost/JuntaVecinos/HTML/Index.html`.
 
-## Cómo ingresar al sistema (cuentas de prueba)
+## Cómo ingresar al sistema 
 
 Para que quien revise el proyecto no se quede pegado en el registro y la aprobación, dejamos creadas dos juntas de ejemplo dentro del archivo unidad_territorial.sql. Basta con importarlo en el paso 4 y las cuentas ya quedan listas para usar desde la pantalla de acceso (http://localhost/JuntaVecinos/HTML/Index.html). El RUT se puede escribir con puntos y guion, tal como aparece abajo, porque el sistema lo formatea solo.
 
