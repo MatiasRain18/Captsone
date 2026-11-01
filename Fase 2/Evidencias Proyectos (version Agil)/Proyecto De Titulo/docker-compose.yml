@@ -1,0 +1,56 @@
+# Sistema Unidad Territorial levantado con Docker
+# Uso: docker compose up -d   (desde esta carpeta)
+#   Sistema:     http://localhost:8080/JuntaVecinos/HTML/Index.html
+#   phpMyAdmin:  http://localhost:8081   (usuario: junta / clave: junta_2026)
+
+services:
+  db:
+    image: mariadb:10.4                     # misma versión de MariaDB que trae XAMPP
+    container_name: unidad_territorial_db
+    restart: unless-stopped
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MARIADB_ROOT_PASSWORD: root_junta_2026
+      MARIADB_DATABASE: unidad_territorial
+      MARIADB_USER: junta
+      MARIADB_PASSWORD: junta_2026
+      TZ: America/Santiago
+    volumes:
+      # La primera vez que se crea el contenedor se importa la base con sus datos de prueba
+      - ./unidad_territorial.sql:/docker-entrypoint-initdb.d/01_unidad_territorial.sql:ro
+      - datos_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-ujunta", "-pjunta_2026"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  web:
+    build: .
+    container_name: unidad_territorial_web
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_USER: junta
+      DB_PASS: junta_2026
+      DB_NAME: unidad_territorial
+    ports:
+      - "8080:80"                           # 8080 para no chocar con el Apache de XAMPP (puerto 80)
+
+  phpmyadmin:
+    image: phpmyadmin:5.2
+    container_name: unidad_territorial_phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PMA_HOST: db
+    ports:
+      - "8081:80"
+
+volumes:
+  datos_db:
