@@ -22,19 +22,57 @@ La plataforma es multi-junta: varias juntas de vecinos la usan al mismo tiempo y
 - **Base de datos:** MariaDB 10.4 / MySQL, base `unidad_territorial` con 9 tablas. El RUT se guarda sin puntos y con el dígito verificador en una columna aparte.
 - **Librerías incluidas:** FPDF 1.9 (certificados en PDF) y PHPMailer (correos por SMTP de Gmail con TLS). Vienen dentro del proyecto, no hay que instalarlas.
 - **Entorno local:** XAMPP (Apache + PHP + MariaDB).
+- **Contenedores:** Docker y Docker Compose. Hay un `Dockerfile` (imagen `php:8.2-apache` con la extensión `mysqli`) y un `docker-compose.yml` que levanta tres contenedores: la aplicación web, la base de datos MariaDB 10.4 (que importa sola el archivo `.sql`) y phpMyAdmin.
 - **Control de versiones:** Git / GitHub.
+- **Cloud:** no se usa. El sistema funciona en un servidor local (XAMPP o Docker) y la publicación en un hosting queda como mejora futura.
 
 
 ## Instrucciones para ejecutar el proyecto localmente
+El sistema se puede ejecutar de dos formas. Las dos usan el mismo código; `PHP/Config.php` detecta solo si está corriendo en XAMPP o en Docker.
+
+### Opción 1: con XAMPP
 1. Instalar XAMPP y abrir su Panel de Control.
 2. Copiar la carpeta `JuntaVecinos`, que está en `Fase 2/Evidencias Proyectos (version Agil)/Proyecto De Titulo/JuntaVecinos`, dentro de `C:\xampp\htdocs\`.
 3. Iniciar los módulos **Apache** y **MySQL**.
 4. Entrar a `http://localhost/phpmyadmin/`, crear la base de datos `unidad_territorial` (cotejamiento `utf8mb4_unicode_ci`) e importar el archivo `unidad_territorial.sql`, que está en la misma carpeta `Proyecto De Titulo`.
 5. Abrir en el navegador `http://localhost/JuntaVecinos/HTML/Index.html`.
 
+### Opción 2: con Docker
+Requiere tener instalado **Docker Desktop** (en Windows, con WSL 2 activado) y abierto.
+
+1. Abrir una terminal (PowerShell o CMD) en la carpeta `Fase 2/Evidencias Proyectos (version Agil)/Proyecto De Titulo`, donde están el `Dockerfile` y el `docker-compose.yml`.
+2. Ejecutar:
+   ```bash
+   docker compose up -d --build
+   ```
+   La primera vez descarga las imágenes y crea la base de datos importando `unidad_territorial.sql` con sus datos de prueba. Tarda un par de minutos.
+3. Revisar que los contenedores estén corriendo:
+   ```bash
+   docker compose ps
+   ```
+   Deben aparecer tres contenedores en estado `Up`: `unidad_territorial_db` (con `healthy`), `unidad_territorial_web` y `unidad_territorial_phpmyadmin`.
+4. Abrir en el navegador:
+   - Sistema: `http://localhost:8080/JuntaVecinos/HTML/Index.html`
+   - phpMyAdmin: `http://localhost:8081` (usuario `junta`, clave `junta_2026`)
+
+Usa el puerto 8080 para no chocar con XAMPP, así que se pueden tener los dos instalados. Comandos útiles:
+
+| Acción | Comando |
+|---|---|
+| Ver los mensajes del sistema | `docker compose logs -f web` |
+| Detener el sistema (los datos se mantienen) | `docker compose stop` |
+| Volver a encenderlo | `docker compose start` |
+| Borrar todo y volver a importar la base desde cero | `docker compose down -v` y luego `docker compose up -d --build` |
+
+**Variables de entorno** (definidas en `docker-compose.yml`): `DB_HOST`, `DB_USER`, `DB_PASS` y `DB_NAME`. Si no existen, como pasa en XAMPP, el sistema usa `localhost`, `root`, sin clave y `unidad_territorial`.
+
+**Envío de correos (opcional):** en `PHP/Config-correo.php` se escribe una cuenta de Gmail y su contraseña de aplicación. Si no se configura, el sistema funciona igual y solo avisa que el correo no se pudo enviar.
+
+**Ver el sistema desde un celular:** el celular y el computador deben estar en la misma red WiFi (o el computador conectado al hotspot del celular). En el computador se ejecuta `ipconfig`, se copia la "Dirección IPv4" del adaptador Wi-Fi y en el celular se abre `http://ESA-IP/JuntaVecinos/HTML/Index.html` (con Docker, `http://ESA-IP:8080/JuntaVecinos/HTML/Index.html`). Si no carga, hay que permitir Apache (o Docker Desktop) en el firewall de Windows.
+
 ## Cómo ingresar al sistema 
 
-Para que quien revise el proyecto no se quede pegado en el registro y la aprobación, dejamos creadas dos juntas de ejemplo dentro del archivo unidad_territorial.sql. Basta con importarlo en el paso 4 y las cuentas ya quedan listas para usar desde la pantalla de acceso (http://localhost/JuntaVecinos/HTML/Index.html). El RUT se puede escribir con puntos y guion, tal como aparece abajo, porque el sistema lo formatea solo.
+Para que quien revise el proyecto no se quede pegado en el registro y la aprobación, dejamos creadas dos juntas de ejemplo dentro del archivo unidad_territorial.sql. Con XAMPP basta con importarlo en el paso 4, y con Docker se importa solo, así que las cuentas ya quedan listas para usar desde la pantalla de acceso (http://localhost/JuntaVecinos/HTML/Index.html con XAMPP, o http://localhost:8080/JuntaVecinos/HTML/Index.html con Docker). El RUT se puede escribir con puntos y guion, tal como aparece abajo, porque el sistema lo formatea solo.
 
 La primera es la Junta de Vecinos Los Aromos. Su administrador, del directorio, es Benjamin, que entra con el RUT 21.691.775-8 y la contraseña HolaQueHace19. Su vecino de ejemplo es Matias, que entra con el RUT 21.691.775-K y la misma contraseña, HolaQueHace19.
 
