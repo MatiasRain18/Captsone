@@ -24,7 +24,7 @@ La plataforma es multi-junta: varias juntas de vecinos la usan al mismo tiempo y
 - **Entorno local:** XAMPP (Apache + PHP + MariaDB).
 - **Contenedores:** Docker y Docker Compose. Hay un `Dockerfile` (imagen `php:8.2-apache` con la extensión `mysqli`) y un `docker-compose.yml` que levanta tres contenedores: la aplicación web, la base de datos MariaDB 10.4 (que importa sola el archivo `.sql`) y phpMyAdmin.
 - **Control de versiones:** Git / GitHub.
-- **Cloud:** no se usa. El sistema funciona en un servidor local (XAMPP o Docker) y la publicación en un hosting queda como mejora futura.
+
 
 
 ## Instrucciones para ejecutar el proyecto localmente
