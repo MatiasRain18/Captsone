@@ -40,18 +40,28 @@ El sistema se puede ejecutar de dos formas. Las dos usan el mismo código; `PHP/
 ### Opción 2: con Docker
 Requiere tener instalado **Docker Desktop** (en Windows, con WSL 2 activado) y abierto.
 
-1. Abrir una terminal (PowerShell o CMD) en la carpeta `Fase 2/Evidencias Proyectos (version Agil)/Proyecto De Titulo`, donde están el `Dockerfile` y el `docker-compose.yml`.
-2. Ejecutar:
+1. Descargar el archivo `DockerJunta.zip`, que está en `Fase 2/Evidencias Proyectos (version Agil)/Proyecto De Titulo` (se abre el archivo en GitHub y se aprieta el botón de descarga). Ese zip ya trae todo listo para Docker:
+   ```
+   DockerJunta/
+   ├── JuntaVecinos/            (código del sistema)
+   ├── unidad_territorial.sql   (base de datos con datos de prueba)
+   ├── Dockerfile
+   ├── docker-compose.yml
+   └── .dockerignore
+   ```
+   Descomprimirlo en cualquier carpeta del computador, por ejemplo `C:\DockerJunta`. También se puede descargar el repositorio completo (botón verde **Code → Download ZIP**) y usar la carpeta `Proyecto De Titulo`, que tiene los mismos archivos.
+2. Abrir una terminal (PowerShell) dentro de esa carpeta. En Windows basta con entrar a la carpeta en el Explorador, escribir `powershell` en la barra de dirección y presionar Enter.
+3. Ejecutar:
    ```bash
    docker compose up -d --build
    ```
    La primera vez descarga las imágenes y crea la base de datos importando `unidad_territorial.sql` con sus datos de prueba. Tarda un par de minutos.
-3. Revisar que los contenedores estén corriendo:
+4. Revisar que los contenedores estén corriendo:
    ```bash
    docker compose ps
    ```
    Deben aparecer tres contenedores en estado `Up`: `unidad_territorial_db` (con `healthy`), `unidad_territorial_web` y `unidad_territorial_phpmyadmin`.
-4. Abrir en el navegador:
+5. Abrir en el navegador:
    - Sistema: `http://localhost:8080/JuntaVecinos/HTML/Index.html`
    - phpMyAdmin: `http://localhost:8081` (usuario `junta`, clave `junta_2026`)
 
