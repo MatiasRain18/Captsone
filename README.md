@@ -92,7 +92,7 @@ Con la cuenta de administrador se ve el panel del directorio, donde se aprueban 
 
 **Envío de correos (opcional):** en `PHP/Config-correo.php` se escribe una cuenta de Gmail y su contraseña de aplicación. Si no se configura, el sistema funciona igual y solo avisa que el correo no se pudo enviar.
 
-**Ver el sistema desde un celular:** el celular y el computador deben estar en la misma red WiFi (o el computador conectado al hotspot del celular). En el computador se ejecuta `ipconfig`, se copia la "Dirección IPv4" del adaptador Wi-Fi y en el celular se abre `http://ESA-IP/JuntaVecinos/HTML/Index.html`. Si no carga, hay que permitir Apache en el firewall de Windows.
+**Ver el sistema desde un celular:** el celular y el computador deben estar en la misma red WiFi (o el computador conectado al hotspot del celular). En el computador se ejecuta `ipconfig`, se copia la "Dirección IPv4" del adaptador Wi-Fi y en el celular se abre `http://ESA-IP/JuntaVecinos/HTML/Index.html`o si esta iniciando con Docker seria `http://ESA-IP:8080/JuntaVecinos/HTML/Index.html`. Si no carga, hay que permitir Apache en el firewall de Windows.
 
 ## Integrantes del equipo con sus roles
 
