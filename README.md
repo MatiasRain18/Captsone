@@ -78,7 +78,7 @@ Usa el puerto 8080 para no chocar con XAMPP, así que se pueden tener los dos in
 
 **Envío de correos (opcional):** en `PHP/Config-correo.php` se escribe una cuenta de Gmail y su contraseña de aplicación. Si no se configura, el sistema funciona igual y solo avisa que el correo no se pudo enviar.
 
-**Ver el sistema desde un celular:** el celular y el computador deben estar en la misma red WiFi (o el computador conectado al hotspot del celular). En el computador se ejecuta `ipconfig`, se copia la "Dirección IPv4" del adaptador Wi-Fi y en el celular se abre `http://ESA-IP/JuntaVecinos/HTML/Index.html` (con Docker, `http://ESA-IP:8080/JuntaVecinos/HTML/Index.html`). Si no carga, hay que permitir Apache (o Docker Desktop) en el firewall de Windows.
+**Ver el sistema desde un celular:** el celular y el computador deben estar en la misma red WiFi (o el computador conectado al hotspot del celular). En el computador se ejecuta `ipconfig`, se copia la "Dirección IPv4" del adaptador Wi-Fi y en el celular se abre `http://ESA-IP/JuntaVecinos/HTML/Index.html` o, si se inició con Docker, `http://ESA-IP:8080/JuntaVecinos/HTML/Index.html`. Si no carga, hay que permitir Apache (o Docker Desktop) en el firewall de Windows.
 
 ## Cómo ingresar al sistema 
 
