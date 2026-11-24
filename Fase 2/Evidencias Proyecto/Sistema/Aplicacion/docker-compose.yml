@@ -1,5 +1,7 @@
 # Sistema Unidad Territorial levantado con Docker
-# Uso: docker compose up -d   (desde esta carpeta)
+# Uso: docker compose up -d --build   (desde esta carpeta)
+# La base de datos se toma de la carpeta vecina "Base de datos".
+# Para una instalación aparte, el archivo DockerJunta.zip trae todo junto en una sola carpeta.
 #   Sistema:     http://localhost:8080/JuntaVecinos/HTML/Index.html
 #   phpMyAdmin:  http://localhost:8081   (usuario: junta / clave: junta_2026)
 
@@ -17,7 +19,7 @@ services:
       TZ: America/Santiago
     volumes:
       # La primera vez que se crea el contenedor se importa la base con sus datos de prueba
-      - ./unidad_territorial.sql:/docker-entrypoint-initdb.d/01_unidad_territorial.sql:ro
+      - "../Base de datos/unidad_territorial.sql:/docker-entrypoint-initdb.d/01_unidad_territorial.sql:ro"
       - datos_db:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-ujunta", "-pjunta_2026"]
