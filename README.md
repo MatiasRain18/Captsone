@@ -32,15 +32,15 @@ El sistema se puede ejecutar de dos formas. Las dos usan el mismo código; `PHP/
 
 ### Opción 1: con XAMPP
 1. Instalar XAMPP y abrir su Panel de Control.
-2. Copiar la carpeta `JuntaVecinos`, que está en `Fase 2/Evidencias Proyectos (version Agil)/Proyecto De Titulo/JuntaVecinos`, dentro de `C:\xampp\htdocs\`.
+2. Copiar la carpeta `JuntaVecinos`, que está en `Fase 2/Evidencias Proyecto/Sistema/Aplicacion/JuntaVecinos`, dentro de `C:\xampp\htdocs\`.
 3. Iniciar los módulos **Apache** y **MySQL**.
-4. Entrar a `http://localhost/phpmyadmin/`, crear la base de datos `unidad_territorial` (cotejamiento `utf8mb4_unicode_ci`) e importar el archivo `unidad_territorial.sql`, que está en la misma carpeta `Proyecto De Titulo`.
+4. Entrar a `http://localhost/phpmyadmin/`, crear la base de datos `unidad_territorial` (cotejamiento `utf8mb4_unicode_ci`) e importar el archivo `unidad_territorial.sql`, que está en `Fase 2/Evidencias Proyecto/Sistema/Base de datos`.
 5. Abrir en el navegador `http://localhost/JuntaVecinos/HTML/Index.html`.
 
 ### Opción 2: con Docker
 Requiere tener instalado **Docker Desktop** (en Windows, con WSL 2 activado) y abierto.
 
-1. Descargar el archivo `DockerJunta.zip`, que está en `Fase 2/Evidencias Proyectos (version Agil)/Proyecto De Titulo` (se abre el archivo en GitHub y se aprieta el botón de descarga). Ese zip ya trae todo listo para Docker:
+1. Descargar el archivo `DockerJunta.zip`, que está en `Fase 2/Evidencias Proyecto/Sistema/Aplicacion` (se abre el archivo en GitHub y se aprieta el botón de descarga). Ese zip ya trae todo listo para Docker:
    ```
    DockerJunta/
    ├── JuntaVecinos/            (código del sistema)
@@ -49,7 +49,7 @@ Requiere tener instalado **Docker Desktop** (en Windows, con WSL 2 activado) y a
    ├── docker-compose.yml
    └── .dockerignore
    ```
-   Descomprimirlo en cualquier carpeta del computador, por ejemplo `C:\DockerJunta`. También se puede descargar el repositorio completo (botón verde **Code → Download ZIP**) y usar la carpeta `Proyecto De Titulo`, que tiene los mismos archivos.
+   Descomprimirlo en cualquier carpeta del computador, por ejemplo `C:\DockerJunta`. También se puede descargar el repositorio completo (botón verde **Code → Download ZIP**) y abrir la terminal en `Fase 2/Evidencias Proyecto/Sistema/Aplicacion`, donde está el `docker-compose.yml`, que toma la base de datos de la carpeta vecina `Base de datos`.
 2. Abrir una terminal (PowerShell) dentro de esa carpeta. En Windows basta con entrar a la carpeta en el Explorador, escribir `powershell` en la barra de dirección y presionar Enter.
 3. Ejecutar:
    ```bash
@@ -103,8 +103,33 @@ Con la cuenta de administrador se ve el panel del directorio, donde se aprueban 
 
 **Docente:** Carlos Andrés Herrera, Capstone (PTY4614), DUOC UC Sede Alameda.
 
+### Aclaración sobre el equipo
+El **Grupo 7** lo integramos solo dos personas: **Matias Enrique Rain Cheuquecoy** y **Daniel Stiven Cruz Bernal**. No formamos parte de ningún otro grupo y este repositorio es únicamente del Grupo 7. Los usuarios de GitHub que aparecen en los commits corresponden a:
+
+| Usuario de GitHub | Integrante |
+|---|---|
+| `MatiasRain18` | Matias Enrique Rain Cheuquecoy |
+| `DanielCruzB` | Daniel Stiven Cruz Bernal |
+
+Por eso las evidencias individuales `Matias_Rain_*` y `Daniel_Cruz_*` de las Fases 1 y 2 son de los dos integrantes de este equipo.
+
+## Ubicación de las evidencias
+
+| Evidencia | Ruta en el repositorio |
+|---|---|
+| Fase 1: guías 1.4 y 1.5, planilla y presentación | `Fase 1/Evidencias Grupales/` |
+| Fase 1: autoevaluaciones y diarios de reflexión | `Fase 1/Evidencias Individules/` |
+| Fase 2: guías 2.4 y 2.6 | `Fase 2/Evidencias Grupales/` |
+| Fase 2: diarios de reflexión | `Fase 2/Evidencias Individuales/` |
+| Fase 2: presentación del proyecto | `Fase 2/Evidencias Proyecto/Presentación Proyecto.pptx` |
+| Fase 2: documentación (Documentos 01 al 07) | `Fase 2/Evidencias Proyecto/Documentacion/` |
+| Fase 2: pruebas (Documentos 06 y 07, plan de pruebas, script y video) | `Fase 2/Evidencias Proyecto/Documentacion/` y `Documentacion/Pruebas/` |
+| Fase 2: aplicación y Docker | `Fase 2/Evidencias Proyecto/Sistema/Aplicacion/` |
+| Fase 2: base de datos y diagrama entidad-relación | `Fase 2/Evidencias Proyecto/Sistema/Base de datos/` |
+| Fase 3 | `Fase 3/` (se completará en esa etapa) |
+
 ## Metodología de trabajo del equipo (Scrum, Kanban, DevOps, etc.)
-**Ágil con tablero Kanban.** Organizamos el trabajo en un tablero con las columnas Por hacer / Haciendo / Listo, lo que nos permitió ver el avance de cada uno y reordenar tareas según el feedback del docente en cada revisión. Los artefactos ágiles del proyecto (Product Vision, Product Backlog, Definition of Done y Documento de Diseño) están en `Fase 2/Evidencias Proyectos (version Agil)`.
+**Ágil con tablero Kanban.** Organizamos el trabajo en un tablero con las columnas Por hacer / Haciendo / Listo, lo que nos permitió ver el avance de cada uno y reordenar tareas según el feedback del docente en cada revisión. Los artefactos ágiles del proyecto (Product Vision, Product Backlog, Sprint Backlog y Retrospectivas, Definition of Done, Documento de Diseño y Documentos de Pruebas) están en `Fase 2/Evidencias Proyecto/Documentacion`.
 
 ## Arquitectura de la solución (descripción o diagrama)
 Arquitectura cliente-servidor sobre XAMPP. El navegador carga las vistas y envía las acciones por AJAX. Apache con PHP procesa cada petición, revisa la sesión, el rol y la junta del usuario, trabaja con MariaDB mediante consultas preparadas y responde en JSON, de modo que la página se actualiza sin recargarse.
