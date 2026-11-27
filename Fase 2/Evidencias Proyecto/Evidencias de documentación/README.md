@@ -13,4 +13,4 @@
 | `Pruebas/Plan-de-pruebas.md` | Resumen del plan de pruebas y sus resultados |
 | `Pruebas/pruebas_automaticas.php` | Script que revisa 45 comportamientos del sistema |
 
-El diagrama entidad-relación de la base de datos está en `../Evidencias de sistema/Base de datos/`.
+El diagrama entidad-relación y el Documento 08- Modelo de Datos están en `../Evidencias de sistema/Base de datos/`, junto a la base de datos.

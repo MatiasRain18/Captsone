@@ -112,7 +112,7 @@ El **Grupo 7** lo integramos solo dos personas: **Matias Enrique Rain Cheuquecoy
 | `MatiasRain18` | Matias Enrique Rain Cheuquecoy |
 | `DanielCruzB` | Daniel Stiven Cruz Bernal |
 
-Por eso las evidencias individuales `Matias_Rain_*` y `Daniel_Cruz_*` de las Fases 1 y 2 son de los dos integrantes de este equipo.
+Por eso las evidencias individuales `Matias_Rain_*` y `Daniel_Cruz_*` de la Fase 1, y `Rain_Matias_*` y `Cruz_Daniel_*` de las Fases 2 y 3, son de los dos integrantes de este equipo.
 
 ## Ubicación de las evidencias
 
@@ -126,8 +126,9 @@ Por eso las evidencias individuales `Matias_Rain_*` y `Daniel_Cruz_*` de las Fas
 | Fase 2: documentación (Documentos 01 al 07) | `Fase 2/Evidencias Proyecto/Evidencias de documentación/` |
 | Fase 2: pruebas (Documentos 06 y 07, plan de pruebas, script y video) | `Fase 2/Evidencias Proyecto/Evidencias de documentación/` y `Evidencias de documentación/Pruebas/` |
 | Fase 2: aplicación y Docker | `Fase 2/Evidencias Proyecto/Evidencias de sistema/Aplicacion/` |
-| Fase 2: base de datos y diagrama entidad-relación | `Fase 2/Evidencias Proyecto/Evidencias de sistema/Base de datos/` |
-| Fase 3 | `Fase 3/` (se completará en esa etapa) |
+| Fase 2: base de datos, diagrama entidad-relación y modelo de datos (Documento 08) | `Fase 2/Evidencias Proyecto/Evidencias de sistema/Base de datos/` |
+| Fase 3: diarios de reflexión | `Fase 3/Evidencias Individuales/` |
+| Fase 3: presentación final | `Fase 3/Evidencias Grupales/Presentación Final del proyecto (Español).pptx` |
 
 ## Metodología de trabajo del equipo (Scrum, Kanban, DevOps, etc.)
 **Ágil con tablero Kanban.** Organizamos el trabajo en un tablero con las columnas Por hacer / Haciendo / Listo, lo que nos permitió ver el avance de cada uno y reordenar tareas según el feedback del docente en cada revisión. Los artefactos ágiles del proyecto (Product Vision, Product Backlog, Sprint Backlog y Retrospectivas, Definition of Done, Documento de Diseño y Documentos de Pruebas) están en `Fase 2/Evidencias Proyecto/Evidencias de documentación`.
