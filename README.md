@@ -1,7 +1,7 @@
 # Sistema Unidad Territorial — Capstone DUOC UC
 
 ## Nombre del proyecto
-Sistema Unidad Territorial — Gestión de Junta de Vecinos
+Sistema Unidad Territorial — Gestión de Junta de Vecinos fefe
 
 ## Descripción
 
@@ -9,7 +9,7 @@ Sistema Unidad Territorial — Gestión de Junta de Vecinos
 
 **A quién va dirigido:** a las juntas de vecinos y a sus dos tipos de usuarios. Por un lado, los vecinos de la unidad territorial, incluidos los adultos mayores; por eso el diseño usa letra grande, alto contraste y un botón para agrandar el texto. Por otro, el directorio de cada junta (presidente, secretario y tesorero), que administra las solicitudes.
 
-**Qué hace:** es un servicio web responsivo que digitaliza la gestión de una junta de vecinos. Los vecinos de la unidad territorial (14 años o más) se inscriben en línea y el directorio de su junta aprueba o rechaza la solicitud. Una vez aprobados, pueden pedir certificados de residencia y de vecino vigente, que se descargan en PDF con firma del presidente, sello digital y un código de validación que cualquier persona puede comprobar en una página pública, sin iniciar sesión. Además pueden leer noticias y avisos (generales, para socios activos o dirigidos a un vecino específico), reservar espacios comunitarios (cancha, sala y plaza), inscribirse en actividades con cupo y, si son socios activos, postular a proyectos vecinales.
+**Qué hace:** es un servicio web responsivo que digitaliza la gestión de una junta de vecinos. Los vecinos de la unidad territorial (14 años o más) se inscriben en línea y el directorio de su junta aprueba o rechaza la solicitud. Una vez aprobados, pueden pedir certificados de residencia y de vecino vigente, que se descargan en PDF con firma del presidente, sello digital y un código de validación que cualquier persona puede comprobar en una página pública, sin iniciar sesión. Además pueden leer noticias y avisos (generales, para socios activos o dirigidos a un vecino específico), reservar espacios comunitarios (cancha, sala y plaza), inscribirse en actividades con cupo y, si son socios activos, postular a proyectos vecinales. 
 
 El directorio, formado por presidente, secretario y tesorero, revisa todas estas solicitudes desde su panel, y el sistema avisa al vecino por correo cada vez que se aprueba o rechaza una inscripción, un certificado o una postulación. Los proyectos se cierran solos cuando pasa su fecha límite.
 
