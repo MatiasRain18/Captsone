@@ -4,7 +4,7 @@
 **Equipo:** Grupo 7 · Matias Rain Cheuquecoy y Daniel Stiven Cruz Bernal
 **Curso:** Capstone PTY4614 · DUOC UC Sede Alameda
 
-En esta carpeta juntamos todo lo relacionado con las pruebas del sistema: el plan que seguimos, los resultados de los casos de prueba manuales, los errores que encontramos y un script de pruebas automáticas que cualquiera puede ejecutar. El detalle completo, con las 37 capturas de evidencia, está en el **Documento 06- Control y Pruebas.docx**, y las evidencias de las pruebas finales (instalación desde cero con Docker y XAMPP, celular y pruebas automáticas) en el **Documento 07- Evidencias de Pruebas.docx**. Ambos están en `Fase 2/Evidencias Proyecto/Documentacion`, junto al video `Prueba Docker paso a paso.mp4`.
+En esta carpeta juntamos todo lo relacionado con las pruebas del sistema: el plan que seguimos, los resultados de los casos de prueba manuales, los errores que encontramos y un script de pruebas automáticas que cualquiera puede ejecutar. El detalle completo, con las 37 capturas de evidencia, está en el **Documento 06- Control y Pruebas.docx**, y las evidencias de las pruebas finales (instalación desde cero con Docker y XAMPP, celular y pruebas automáticas) en el **Documento 07- Evidencias de Pruebas.docx**. Ambos están en `Fase 2/Evidencias Proyecto/Evidencias de documentación`, junto al video `Prueba Docker paso a paso.mp4`.
 
 ## Contenido de la carpeta
 
