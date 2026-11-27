@@ -4,7 +4,7 @@
 Sistema Unidad Territorial — Gestión de Junta de Vecinos
 ## Descripción
 g
-g
+
 
 **Qué problema resuelve:** en muchas juntas de vecinos los trámites se hacen en papel y en persona. Para pedir un certificado de residencia, inscribirse o enterarse de un aviso hay que ir a la sede en su horario, los registros quedan en cuadernos o planillas sueltas que se pierden o se duplican, y no hay forma de comprobar si un certificado es auténtico. Esto le quita tiempo al directorio y deja fuera a vecinos que trabajan o que no pueden trasladarse.
 
