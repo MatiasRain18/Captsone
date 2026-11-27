@@ -4,7 +4,7 @@
 Sistema Unidad Territorial — Gestión de Junta de Vecinos
 g
 g
-g
+
 g
 g
 
