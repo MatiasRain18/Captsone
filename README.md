@@ -1,7 +1,7 @@
 # Sistema Unidad Territorial — Capstone DUOC UC
 
 ## Nombre del proyecto
-Sistema Unidad Territorial — Gestión de Junta de Vecinos fefe
+Sistema Unidad Territorial — Gestión de Junta de Vecinos
 
 ## Descripción
 
