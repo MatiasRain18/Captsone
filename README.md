@@ -2,7 +2,7 @@
 
 ## Nombre del proyecto
 Sistema Unidad Territorial — Gestión de Junta de Vecinos
-g
+
 g
 
 
